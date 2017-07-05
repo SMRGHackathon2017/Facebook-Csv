@@ -142,7 +142,7 @@ if __name__ == '__main__':
 
     # input date formatted as YYYY-MM-DD
     since_date = "2017-01-01"
-    until_date = "2017-06-16"
+    until_date = "2017-07-05"
 
 
     access_token = fb.auth_api('facebook')
@@ -161,4 +161,3 @@ if __name__ == '__main__':
         posts.append(post)
 
     output = fb.write_json(posts, page_id + '.json')
-

@@ -63,7 +63,7 @@ def write_csv(d, f):
         d: tuple containing (header, data)
         f: filename for csv file.
     Output
-        Fiel written to disk
+        File written to disk
     """
     with open(f, 'w') as csv_file:
         writer = csv.writer(csv_file)
@@ -168,7 +168,10 @@ def extract_dict(d, f):
     if len(f) == 1:
         return extract_value(f[0], d)
     else:
-        return extract_dict(d[f[0]], f[1:])
+        if f[0] in d:
+            return extract_dict(d[f[0]], f[1:])
+        else:
+            return unicode_decode('')
 
 
 def create_csv(d, f):
